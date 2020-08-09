@@ -1,0 +1,51 @@
+.section-office .container h2 {
+    text-align: left;
+}
+.section-office .container{
+    display: block;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #d4d4d4;
+    padding: 10px;
+}
+
+.section-office .container:first-child{
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.section-office .container .header-company{
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px;
+}
+
+.container {
+    justify-content: left;
+}
+
+section{
+    padding: 10px;
+}
+
+.section-office .container .row  label{
+    font-weight: bold;
+}
+
+.section-office .container .row {
+    margin: 10px 0;
+}
+
+
+
+.section-office .container .row a{
+    width: 135px;
+    /* border: 1px solid black; */
+    padding: 5px;
+    border-radius: 5px;
+    background: grey;
+    float: right;
+    text-decoration: none;
+}
+
+#phone{
+    display: inline-block;
+}
+

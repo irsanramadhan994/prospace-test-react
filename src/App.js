@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Company from "./component/company/Company";
+import Office from "./component/office/Office"
+import Modal from './component/Modal/Modal'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Modal />
+      
+
+        <Switch>
+          <Route exact path="/">
+            <Company />
+          </Route>
+          <Route exact path="/:id">
+            <Office />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

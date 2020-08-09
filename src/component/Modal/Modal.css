@@ -1,0 +1,48 @@
+.modal-container{
+
+    width: 400px;
+    height: auto;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: fixed;
+    top: 20%;
+    box-shadow: 2px 2px 5px rgb(165, 165, 165);
+    left: 33%;
+}
+
+.modal-container .row:first-child{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.modal-container .row:nth-child(2){
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.modal-container .row{
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-container .row div div{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    margin:10px auto;
+    border: 1px solid black;
+    background-color: gainsboro;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-container .row:last-child{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.hide{
+    display: none;
+}

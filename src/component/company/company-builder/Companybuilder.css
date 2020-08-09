@@ -1,0 +1,37 @@
+.card{
+ margin: 0 auto;
+    background-color: #272626;
+    text-align: left;
+
+}
+
+.card input {
+    width: 100%;
+    border-radius: 5px;
+    height: 25px; 
+    padding: 2px;
+    border: 1px solid #7a7a7a;
+}
+
+.card label{
+    font-weight: bold;
+}
+
+input[type=submit],
+input[type=submit]:link,
+input[type=submit]:active{
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #999999;
+    transition: background-color  0.5s;
+    font-size: 20px;
+}
+
+input[type=submit]:hover,
+input[type=submit]:visited{
+
+    background-color: #fff;
+    border:1px solid #999999
+}
+
+
