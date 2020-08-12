@@ -41,7 +41,7 @@ const Modal = (props) => {
         <div onClick={() => props.deleteOffice(props.modals[0].modals_index,props.modals[0].modals_company_name)}>
           OK
         </div>
-        <div onClick={() => props.modalCloseState()}>NO</div>;
+        <div onClick={() => props.modalCloseState()}>NO</div>
       </div>
     );
   }
