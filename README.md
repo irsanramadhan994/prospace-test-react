@@ -1,8 +1,8 @@
 
 ### `Node JS/ Express.js`
 
-Before runs react app make sure the server side is already run by install the serverside app `https://github.com/irsanramadhan994/prospace-test-nodejs`
-
+Before runs react app make sure the server side is already run by install the serverside `cd` on nodejs, then install the package.json `npm i` then start the node js server with
+`npm start`
 
 
 ### `npm start`
