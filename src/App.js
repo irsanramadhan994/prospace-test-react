@@ -4,14 +4,16 @@ import Company from "./component/company/Company";
 import Office from "./component/office/Office"
 import Modal from './component/Modal/Modal'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
-function App() {
+const App = (props) => {
   
   
   return (
     <Router>
       <div className="App">
         <Modal />
+        <div id="overlay" className={props.modals[0].modals_show ? 'show': null}/>
       
 
         <Switch>
@@ -27,4 +29,13 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    company: state.company,
+    action: state.action,
+    modals:state.modals
+  };
+};
+
+
+export default connect(mapStateToProps)(App);

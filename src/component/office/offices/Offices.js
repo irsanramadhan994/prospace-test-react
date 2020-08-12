@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 const Offices = (props) => {
 
     console.log(props)
+    console.log(props.company[0].office.length)
+
     
   let office = props.company[0] ? (
     <div className="flex-container">
@@ -44,7 +46,7 @@ const Offices = (props) => {
         <section className="section-offices">
           <h2>Offices</h2>
           <div>
-            {props.company[0].office.length == 1 ? office : "There is no Offices created yet"}
+            {props.company[0].office.length > 0 ? office : "There is no Offices created yet"}
           </div>
         </section>
       );

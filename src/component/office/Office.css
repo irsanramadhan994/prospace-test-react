@@ -10,6 +10,7 @@
 
 .section-office .container:first-child{
     border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 20px;
 }
 
 .section-office .container .header-company{
@@ -33,6 +34,10 @@ section{
     margin: 10px 0;
 }
 
+.section-office .container .row{
+    width: 100%;
+}
+
 
 
 .section-office .container .row a{
@@ -40,7 +45,6 @@ section{
     /* border: 1px solid black; */
     padding: 5px;
     border-radius: 5px;
-    background: grey;
     float: right;
     text-decoration: none;
 }
@@ -49,3 +53,7 @@ section{
     display: inline-block;
 }
 
+.section-office{
+    width: 80%;
+    margin: 10px auto;
+}

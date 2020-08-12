@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./Officebuilder.css";
+import { useForm } from "react-hook-form";
 
 const Officebuilder = (props) => {
   let today = new Date();
+  const { register, handleSubmit, watch, errors } = useForm({
+    criteriaMode: "all",
+  });
+  const onSubmit = (data) => {
+    props.createOffice(officeForm.office);
+    setofficeForm({
+      office: {
+        office_name: "",
+        latitude: "",
+        longitude: "",
+        office_date: today.toLocaleDateString("en-CA"),
+        office_company: "",
+      },
+    });
+
+  };
 
   const [officeForm, setofficeForm] = useState({
     office: {
@@ -62,7 +79,7 @@ const Officebuilder = (props) => {
     <div className="card">
       <h2>Create Office</h2>
 
-      <form onSubmit={handleCreateoffice} action="" method="post">
+      <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
         <div className="row">
           <label htmlFor="name">Name:</label>
         </div>
@@ -70,11 +87,17 @@ const Officebuilder = (props) => {
           <input
             value={officeForm.office.office_name}
             type="text"
+            name="name"
             placeholder="name"
             id="name"
-            required
+            className={errors.name ? "error" : null}
+            ref={register({ required: "Please Fill this field" })}
             onChange={(e) => handleofficeName(e.target.value)}
           />
+
+          {errors.name ? (
+            <span className="form-error">{errors.name?.message}</span>
+          ) : null}
         </div>
         <div className="row">
           <label htmlFor="">Location:</label>
@@ -82,20 +105,45 @@ const Officebuilder = (props) => {
         <div className="row">
           <input
             value={officeForm.office.latitude}
-            type="text"
+            className={errors.latitude ? "error" : null}
+            name="latitude"
+            type="number"
+            step="0.1"
             placeholder="latitude"
             id="latitude"
+            ref={register({
+              required: "Please Fill this field",
+              pattern: {
+                value: /^(?:[1-9]\d*|0)?(?:\.\d+)?$/gm,
+                message: "Number must positive float number",
+              },
+            })}
             onChange={(e) => handleofficeLatitude(e.target.value)}
-            required
           />
+
           <input
-            type="text"
+            type="number"
             placeholder="longitude"
             id="longitude"
+            name="longitude"
+            className={errors.longitude ? "error" : null}
             value={officeForm.office.longitude}
             onChange={(e) => handleofficeLongitude(e.target.value)}
-            required
+            ref={register({
+              required: "Please Fill this field",
+              pattern: {
+                value: /^(?:[1-9]\d*|0)?(?:\.\d+)?$/gm,
+                message: "Number must positive float number",
+              },
+            })}
           />
+
+          {errors.latitude ? (
+            <span className="form-error">{errors.latitude?.message}</span>
+          ) : null}
+          {errors.longitude ? (
+            <span className="form-error">{errors.longitude?.message}</span>
+          ) : null}
         </div>
         <div className="row">
           <label htmlFor="office_date">Office Start Date:</label>
@@ -106,7 +154,6 @@ const Officebuilder = (props) => {
             value={officeForm.office.office_date}
             placeholder="date"
             id="office_date"
-            required
             onChange={(e) => handleofficeDate(e.target.value)}
           />
         </div>
@@ -115,11 +162,12 @@ const Officebuilder = (props) => {
         </div>
         <div className="row">
           <select
-            name="code"
-            id="code"
+            name="company"
+            id="company"
             onChange={(e) => handleofficeCompany(e.target.value)}
-            required
             value={officeForm.office.office_company}
+            className={errors.company ? "error" : null}
+            ref={register({ required: "Please select the company" })}
           >
             <option value=""> -- Select Company -- </option>
             {props.company.map((data, i) => {
@@ -130,6 +178,10 @@ const Officebuilder = (props) => {
               );
             })}
           </select>
+
+          {errors.company ? (
+            <span className="form-error">{errors.company?.message}</span>
+          ) : null}
         </div>
         <input type="submit" value="Create" className="submit-office" />
       </form>

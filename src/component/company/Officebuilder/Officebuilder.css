@@ -1,5 +1,5 @@
 #latitude{
-    width: 50%;
+    width: 48%;
     margin-right: 5px;
 }
 
@@ -7,3 +7,13 @@
     width: 49%;
 }
 
+.form-error{
+    padding-top: 10px;
+    color: #d50000;
+    font-size: 0.8em;
+    visibility: hidden;
+}
+
+.error + .form-error{
+    visibility: visible;
+}

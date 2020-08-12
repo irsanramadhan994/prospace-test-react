@@ -5,33 +5,114 @@
 
 }
 
-.card input {
+form{
+    padding:10px;
+}
+
+span{
+    font-weight: 300;
+    font-size: 80%;
+}
+
+.card input,select {
+    
     width: 100%;
-    border-radius: 5px;
-    height: 25px; 
-    padding: 2px;
-    border: 1px solid #7a7a7a;
+    border-radius: 4px;
+    min-height: calc(0.5em + (0.8em * 2) + 0.6em); 
+    padding: 0.7em;
+    font-size: 0.9em;
+    border: 1px solid #dddddd;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+}
+
+input::placeholder{
+        color: #bbbbbb;
+}
+
+.card input:focus {
+    background-color: #fff;
+}
+
+input.error,
+select.error{
+    color: #d50000;
+    background-color: #fffBF8;
+    border-color: #dd5500;
+}
+
+.form-error{
+    padding-top: 10px;
+    color: #d50000;
+    font-size: 0.8em;
+    visibility: hidden;
+}
+
+.error + .form-error{
+    visibility: visible;
+}
+
+.error::placeholder{
+    color: #ffbfbf;
 }
 
 .card label{
     font-weight: bold;
 }
 
+.label-error{
+    background: #c51244 !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    position: relative; 
+    float: right;
+    display: none;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    margin-bottom: 10px;
+    color:white;
+    margin-left: 199px;
+
+
+}
+
+.label-error:before{ 
+    content: ''; 
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #c51244;
+    position: absolute; 
+    top: 47px; 
+  }
+
+
 input[type=submit],
 input[type=submit]:link,
 input[type=submit]:active{
     cursor: pointer;
     margin-top: 20px;
-    background-color: #999999;
-    transition: background-color  0.5s;
+    background-color: #fff;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #0fa942;
+    transition: background-color  0.25s , color 0.25s;
     font-size: 20px;
+    font-weight: 600;
+    color: black;
 }
 
 input[type=submit]:hover,
 input[type=submit]:visited{
 
-    background-color: #fff;
-    border:1px solid #999999
+    background-color: #14b64a;
+    border:1px solid #999999;
+    color:#fff;
 }
 
+
+
+
+/* MEDIA QUERY */
 
